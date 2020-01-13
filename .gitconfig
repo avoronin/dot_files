@@ -13,8 +13,8 @@
     di = diff
     ds = diff --staged
     fe = fetch
-    ll =
-    ls =  
+    ll = "!f() { git log --format='%Cred%ci%Creset | %Cgreen%>(8,ltrunc)%h%Creset | %Cblue%>(20,ltrunc)%cn%Creset | %C(yellow)%s%Creset' $@; }; f"
+    ls = "!f() { git log --format='%Cred%ci%Creset | %Cgreen%>(8,ltrunc)%h%Creset | %Cblue%>(20,ltrunc)%cn%Creset | %C(yellow)%<(80,trunc)%s%Creset' $@ | head; }; f"
     nb = checkout -b
     prb = pull --rebase
     sh = stash
@@ -22,14 +22,9 @@
     rb = rebase
     re = remote -v
     rs = reset
-    ll = "!f() { git log --format='%Cred%ci%Creset | %Cgreen%>(8,ltrunc)%h%Creset | %Cblue%>(20,ltrunc)%cn%Creset | %C(yellow)%s%Creset' $@; }; f"
-    ls = "!f() { git log --format='%Cred%ci%Creset | %Cgreen%>(8,ltrunc)%h%Creset | %Cblue%>(20,ltrunc)%cn%Creset | %C(yellow)%<(80,trunc)%s%Creset' $@ | head; }; f"
-    rb = rebase
-    re = remote -v
-    rs = reset
 [core]
-    mergeoptions = --no-ff --no-commit
     editor = vim
+    mergeoptions = --no-ff --no-commit
     whitespace = blank-at-eol,space-before-tab,tab-in-indent
 [log]
     abbrevcommit = false
@@ -39,10 +34,10 @@
     status = true
     ui = true
 [color "diff"]
-    old = red
-    new = green
     frag = magenta
     meta = yellow
+    new = green
+    old = red
     whitespace = blue
 [diff]
     wsErrorHighlight = all
