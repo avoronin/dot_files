@@ -1,53 +1,52 @@
 [user]
-	name = Alexander Voronin
-	email = avoronin@elance-odesk.com
+    name = Alexander Voronin
+    email = 
 [alias]
-	bl = blame
-	br = branch -v
-	ci = commit
-	co = checkout
+    bl = blame
+    br = branch -vv
+    cfg = config --global
+    cfl = config --local
+    ci = commit
     cl = clean -df
-	cp = cherry-pick
-	di = diff
-	ds = diff --staged
-	fe = fetch
-	nb = checkout -b
-	prb = pull --rebase
-	sh = stash
-	st = status
-	ll = log --format='[%Cred%cd%Creset] [%Cgreen%h%Creset] [%Cblue%cn%Creset] [%C(yellow)%s%Creset]'
-	rb = rebase
-	re = remote -v
-	rs = reset
-	cfg = config --global
+    co = checkout
+    cp = cherry-pick
+    di = diff
+    ds = diff --staged
+    fe = fetch
+    ll =
+    ls =  
+    nb = checkout -b
+    prb = pull --rebase
+    sh = stash
+    st = status
+    rb = rebase
+    re = remote -v
+    rs = reset
+    ll = "!f() { git log --format='%Cred%ci%Creset | %Cgreen%>(8,ltrunc)%h%Creset | %Cblue%>(20,ltrunc)%cn%Creset | %C(yellow)%s%Creset' $@; }; f"
+    ls = "!f() { git log --format='%Cred%ci%Creset | %Cgreen%>(8,ltrunc)%h%Creset | %Cblue%>(20,ltrunc)%cn%Creset | %C(yellow)%<(80,trunc)%s%Creset' $@ | head; }; f"
+    rb = rebase
+    re = remote -v
+    rs = reset
 [core]
     mergeoptions = --no-ff --no-commit
     editor = vim
-	whitespace = tab-in-indent
+    whitespace = blank-at-eol,space-before-tab,tab-in-indent
 [log]
-	abbrevcommit = true
+    abbrevcommit = false
 [color]
-	branch = true
-	diff = true
-	status = true
-	ui = true
+    branch = true
+    diff = true
+    status = true
+    ui = true
 [color "diff"]
-	old = red
-	new = green
-	frag = magenta
-	meta = yellow
+    old = red
+    new = green
+    frag = magenta
+    meta = yellow
+    whitespace = blue
+[diff]
+    wsErrorHighlight = all
 [merge]
     log = true
-	summary = true
-	verbosity = 1
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 380x188+49+24
-	history-view-vpane-position = 392
-	file-view-vpane-position = 832
-	show-graph = false
-	main-window-view = HistoryView
-	file-view-hpane-position = 272
-[gui]
-	fontui = -family \"Liberation Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"Liberation Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+    summary = true
+    verbosity = 1
